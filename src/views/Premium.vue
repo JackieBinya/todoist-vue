@@ -1,23 +1,16 @@
 <template>
   <div>
     <Menu />
+    <h1>Premium</h1>
   </div>
 </template>
 
 <script>
-// import { ChevronDownIcon, ChevronUpIcon } from "vue-feather-icons";
 import Menu from "@/components/Menu.vue";
-
 export default {
+  name: "Premium",
   components: {
     Menu
-  },
-  data() {
-    return {
-      showDropdown: false
-    };
   }
 };
 </script>
-
-<style></style>
