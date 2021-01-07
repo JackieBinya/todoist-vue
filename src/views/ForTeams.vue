@@ -1,16 +1,9 @@
 <template>
-  <div>
-    <Menu />
-    <h1>For Teams</h1>
-  </div>
+  <img src="@/assets/hero-interface.webp" alt="" class="desktop-interface" />
 </template>
 
 <script>
-import Menu from "@/components/Menu.vue";
-export default {
-  name: "ForTeams",
-  components: {
-    Menu
-  }
-};
+export default {};
 </script>
+
+<style></style>

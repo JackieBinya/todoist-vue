@@ -201,7 +201,12 @@ export default {
 
 <style lang="scss">
 header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   padding: 0 16px;
+  background-color: #fff;
+  z-index: 50;
 }
 
 nav {
@@ -210,6 +215,8 @@ nav {
   margin: 0 auto;
   max-width: 1088px;
   min-height: 48px;
+  background-color: #fff;
+  pointer-events: auto;
 
   ul > li > a {
     background-color: transparent;
@@ -249,7 +256,7 @@ nav {
   left: 0;
   top: 2.5em;
   width: 100%;
-  opacity: 0;
+  display: none;
   font-size: 16px;
   padding: 1rem;
   background-color: #fff;
@@ -278,7 +285,7 @@ nav {
 }
 
 .show-popup-menu-sm {
-  opacity: 1;
+  display: block;
 }
 
 .popup-menu-link-sm {
@@ -433,6 +440,7 @@ a.signup-action {
   opacity: 0;
   max-height: calc(100vh - 5rem);
   width: 350px;
+  background-color: #fff;
 
   a {
     text-decoration: none;
