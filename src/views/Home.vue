@@ -7,24 +7,7 @@
 
       <demo-section />
 
-      <section class="todoist-reviews">
-        <div class="todoist-reviews-background"></div>
-
-        <div class="todoist-reviews-content">
-          <div v-for="review in reviews" :key="review.id">
-            <p>
-              {{ review.platform }}
-            </p>
-            <h4 class="todoist-reviews-desc">
-              {{ review.description }}
-            </h4>
-
-            <div>
-              ★★★★★
-            </div>
-          </div>
-        </div>
-      </section>
+      <reviews-section />
 
       <section class="todoist-community">
         <div class="todoist-community-patners">
@@ -313,6 +296,7 @@ import { ArrowRightIcon } from "vue-feather-icons";
 import testimonialsData from "../assets/testimonials-data.json";
 import HeroSection from "../components/home/hero-section.vue";
 import DemoSection from "../components/home/demo-section.vue";
+import ReviewsSection from "../components/home/reviews-section.vue";
 
 export default {
   components: {
@@ -320,31 +304,15 @@ export default {
     ArrowRightIcon,
     CallToAction,
     HeroSection,
-    DemoSection
+    DemoSection,
+    ReviewsSection
   },
   data() {
     return {
       showDropdown: false,
       showOverlay: false,
       innerWidth: "",
-      testimonials: testimonialsData.data,
-      reviews: [
-        {
-          id: 1,
-          platform: "Google Play",
-          description: "Editor’s Choice \n 4.7 stars, 187K+ reviews"
-        },
-        {
-          id: 2,
-          platform: "Apple Store",
-          description: "Featured app \n 4.8 stars, 30K+ reviews"
-        },
-        {
-          id: 3,
-          platform: "The Verge",
-          description: " 9/10\n “The best to-do list app\n right now”"
-        }
-      ]
+      testimonials: testimonialsData.data
     };
   },
   methods: {
