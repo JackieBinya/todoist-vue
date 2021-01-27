@@ -183,6 +183,7 @@ import {
 } from "vue-feather-icons";
 
 export default {
+  name: "Menu",
   components: {
     MenuIcon,
     XIcon,

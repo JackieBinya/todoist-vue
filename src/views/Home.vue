@@ -1,31 +1,9 @@
 <template>
   <div>
     <Menu />
+
     <main id="home">
-      <section class="intro">
-        <div>
-          <h1>
-            Organize it all <br />
-            <span>with Todoist</span>
-          </h1>
-          <CallToAction />
-        </div>
-      </section>
-
-      <section class="hero">
-        <img
-          src="https://todoist.com/_next/static/images/header@2x_b52d8f7c7bf19d6c702569d1072ed6a2.webp"
-          alt="pe
-          ople using todoist to get organized"
-          class="todoist-hero"
-        />
-        <img
-          src="@/assets/hero-secondary.webp"
-          class="interface-background"
-          alt=""
-        />
-      </section>
-
+      <hero-section />
       <div class="todoist-interface">
         <img src="@/assets/hero-phone.webp" alt="" class="mobile-interface" />
 
@@ -368,13 +346,15 @@ import Menu from "@/components/Menu.vue";
 import CallToAction from "@/components/CallToAction.vue";
 import { ArrowRightIcon, PlayCircleIcon } from "vue-feather-icons";
 import testimonialsData from "../assets/testimonials-data.json";
+import HeroSection from "../components/home/hero-section.vue";
 
 export default {
   components: {
     Menu,
     ArrowRightIcon,
     PlayCircleIcon,
-    CallToAction
+    CallToAction,
+    HeroSection
   },
   data() {
     return {
@@ -446,57 +426,6 @@ export default {
   position: relative;
 }
 
-.intro {
-  position: relative;
-  z-index: 12;
-  display: flex;
-  justify-content: center;
-  padding: 8rem 1rem 0;
-  margin-bottom: -2rem;
-
-  h1 {
-    font-size: 2.75rem;
-    line-height: 1.05;
-    font-weight: 900;
-
-    span {
-      display: inline-block;
-      padding-left: 1.8rem;
-    }
-
-    @media (min-width: 768px) {
-      font-size: 3.75rem;
-    }
-
-    @media (min-width: 1024px) {
-      font-size: 5rem;
-    }
-  }
-
-  > div > div {
-    display: flex;
-    justify-content: center;
-  }
-
-  @media (min-width: 768px) {
-    margin-bottom: -5rem;
-  }
-
-  @media (min-width: 768px) {
-    margin-bottom: -6rem;
-  }
-}
-
-.hero {
-  position: relative;
-
-  .todoist-hero {
-    width: 100%;
-    max-width: 1034px;
-    margin: 0 auto;
-  }
-}
-
 .todoist-interface {
   position: relative;
   margin: -11% 0 0;
@@ -524,23 +453,6 @@ export default {
 
   @media (min-width: 768px) {
     top: 13%;
-  }
-}
-
-.interface-background {
-  display: none;
-  width: 100%;
-  transform: translate(-50%);
-  position: absolute;
-  left: 50%;
-  top: 28rem;
-
-  @media (min-width: 768px) {
-    display: block;
-  }
-
-  @media (min-width: 1024px) {
-    top: 38rem;
   }
 }
 
