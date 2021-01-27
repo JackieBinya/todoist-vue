@@ -203,10 +203,10 @@ export default {
 header {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   padding: 0 16px;
   background-color: #fff;
-  z-index: 50;
+  z-index: 100;
 }
 
 nav {
@@ -234,6 +234,7 @@ nav {
 
   &-sm {
     display: block;
+    margin: 0;
 
     @media (min-width: 480px) {
       display: none;
@@ -242,6 +243,7 @@ nav {
 
   &-bg {
     display: none;
+    margin: 0;
 
     @media (min-width: 480px) {
       display: block;

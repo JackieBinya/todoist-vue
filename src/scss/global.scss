@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap');
 
 @import 'normalize-scss';
 // @include normalize();
+
 
 *{
     box-sizing: border-box;
@@ -18,15 +20,14 @@ body{
   padding: 0;
 }
 
+
 nav {
     a{
-        // color: #575757;
         font-weight: 400;
         flex: 200px;
         padding: 0 16px;
         line-height: 44px;
         display: block;
-        // text-align: center;
     }
 }
 
@@ -63,8 +64,51 @@ h1{
     }
 }
 
+h2{
+    font-size: 2rem;
+    line-height: 1.15;
+
+    @media(min-width: 768px){
+        font-size: 2.75rem;
+    }
+
+    @media(min-width: 1024px){
+        font-size: 3rem;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+}
+
 
 img{
     display: block;
-    margin: 0 auto;
+}
+
+.p-content{
+    font-size: 1.0625rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    @media(min-width: 1024px){
+        font-size: 1.4rem;
+      letter-spacing: -0.01em;
+    }
+}
+
+.link{
+    font-size: 1.0625rem;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    color: #3773ef;
+    font-weight: 400;
+    padding: 0.8rem 0;
+
+    > span{
+        display: block;
+    }
+
+    @media(min-width: 1024px){
+       font-size: 1.1875rem rem;
+    }
 }
