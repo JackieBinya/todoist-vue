@@ -439,7 +439,7 @@ a.signup-action {
   border: 1px solid #dedede;
   overflow: auto;
   border-radius: 4px;
-  opacity: 0;
+  display: none;
   max-height: calc(100vh - 5rem);
   width: 350px;
   background-color: #fff;
@@ -474,7 +474,7 @@ a.signup-action {
 }
 
 .dropdown-parent-bg:hover > .dropdown-bg {
-  opacity: 1;
+  display: block;
 }
 
 .dropdown-link-headliner {
