@@ -21,6 +21,16 @@
         alt=""
       />
     </div>
+
+    <div class="todoist-interface">
+      <img src="@/assets/hero-phone.webp" alt="" class="mobile-interface" />
+
+      <img
+        src="@/assets/hero-interface.webp"
+        alt=""
+        class="desktop-interface"
+      />
+    </div>
   </section>
 </template>
 
@@ -104,6 +114,32 @@ export default {
         top: 38rem;
       }
     }
+  }
+}
+
+.todoist-interface {
+  position: relative;
+  margin: -11% 0 0;
+
+  @media (min-width: 1024px) {
+    margin: -6rem 0 -17.5rem;
+  }
+}
+
+.desktop-interface {
+  width: 100%;
+  max-width: 1398px;
+}
+
+.mobile-interface {
+  position: absolute;
+  top: 1rem;
+  right: 14%;
+  width: 42%;
+  max-width: 581px;
+
+  @media (min-width: 768px) {
+    top: 13%;
   }
 }
 </style>

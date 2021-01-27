@@ -4,15 +4,6 @@
 
     <main id="home">
       <hero-section />
-      <div class="todoist-interface">
-        <img src="@/assets/hero-phone.webp" alt="" class="mobile-interface" />
-
-        <img
-          src="@/assets/hero-interface.webp"
-          alt=""
-          class="desktop-interface"
-        />
-      </div>
 
       <section class="todoist-demo">
         <h2>Free up your mental space</h2>
@@ -423,37 +414,8 @@ export default {
 
 <style lang="scss">
 #home {
+  // The rule below ensures that the overlay covers the whole view port
   position: relative;
-}
-
-.todoist-interface {
-  position: relative;
-  margin: -11% 0 0;
-
-  /*  @media (max-width: 1020px) {
-    margin: -8% 0 -20.5%;
-  } */
-
-  @media (min-width: 1024px) {
-    margin: -6rem 0 -17.5rem;
-  }
-}
-
-.desktop-interface {
-  width: 100%;
-  max-width: 1398px;
-}
-
-.mobile-interface {
-  position: absolute;
-  top: 1rem;
-  right: 14%;
-  width: 42%;
-  max-width: 581px;
-
-  @media (min-width: 768px) {
-    top: 13%;
-  }
 }
 
 // Todoist Demo Section
