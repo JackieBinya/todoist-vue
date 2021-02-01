@@ -80,36 +80,18 @@
       </div>
     </div>
 
-    <div class="todoist-community-video">
-      <img
-        src="@/assets/community-video-background.webp"
-        alt=""
-        class="thumbnail-background"
-      />
-      <img src="@/assets/community-vid.webp" alt="" class="thumbnail" />
-
-      <div role="button" @click="playVideo">
-        <svg viewBox="0 0 60 61" class="_2o_bh">
-          <g fill="none" fill-rule="evenodd" transform="translate(0 .2)">
-            <circle cx="30" cy="30" fill="#000" r="30"></circle>
-            <path d="M45 30.5L22 42V19z" fill="#fff"></path>
-          </g>
-        </svg>
-      </div>
-      <!--  <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/IL8jpc8Lik4"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe> -->
-    </div>
+    <community-video />
   </section>
 </template>
 
 <script>
-export default {};
+import CommunityVideo from "@/components/home/community-video.vue";
+
+export default {
+  components: {
+    CommunityVideo
+  }
+};
 </script>
 
 <style lang="scss">
@@ -125,6 +107,54 @@ export default {};
     display: block;
   }
 
+  p {
+    font-size: 1.4rem;
+    text-align: center;
+    letter-spacing: 0.01em;
+
+    @media (min-width: 1024px) {
+      text-align: left;
+      font-size: 1.4rem;
+      line-height: 1.35;
+    }
+  }
+
+  em {
+    font-size: 3.2rem;
+    display: block;
+    letter-spacing: -0.04em;
+    font-style: normal;
+
+    @media (min-width: 1024px) {
+      font-size: 3.2rem;
+      line-height: -2px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    display: flex;
+    justify-content: space-between;
+    padding: 7rem 1rem 8rem 3rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1120px;
+  }
+}
+
+.todoist-community-patners {
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    padding-top: 4rem;
+  }
+}
+
+.todoist-community-patners-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   svg:nth-child(1) {
     margin: 1rem;
     margin-left: 0;
@@ -138,110 +168,13 @@ export default {};
     margin: 1rem;
   }
 
-  p {
-    font-size: 1.1rem;
-    text-align: center;
-
-    @media (min-width: 1024px) {
-      text-align: left;
-      font-size: 1.4rem;
-      line-height: 1.35;
-    }
-  }
-
-  em {
-    font-size: 2.2rem;
-    display: block;
-    letter-spacing: -1px;
-    font-style: normal;
-
-    @media (min-width: 1024px) {
-      font-size: 3.2rem;
-      line-height: -2px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 7rem 1rem 8rem;
-  }
-}
-
-.todoist-community-patners {
-  @media (min-width: 1024px) {
-    padding-top: 4rem;
-  }
-}
-
-.todoist-community-patners-icons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
   @media (min-width: 768px) {
     justify-content: center;
   }
 
   @media (min-width: 1024px) {
+    width: 30rem;
     justify-content: space-between;
-  }
-}
-
-.todoist-community-video {
-  width: 100%;
-  position: relative;
-
-  .thumbnail {
-    width: 100%;
-    max-width: 478px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.24);
-
-    @media (min-width: 768px) {
-      position: relative;
-    }
-
-    @media (min-width: 1024px) {
-      left: 5%;
-    }
-  }
-
-  .thumbnail-background {
-    display: none;
-    position: absolute;
-    width: 110%;
-    max-width: 528px;
-    max-height: 363px;
-    left: 19%;
-    top: -23%;
-
-    @media (min-width: 768px) {
-      display: block;
-    }
-  }
-
-  div {
-    position: absolute;
-    cursor: pointer;
-    width: 60px;
-    opacity: 0.3;
-    top: 26%;
-    left: 36%;
-
-    @media (min-width: 768px) {
-      left: 43%;
-      top: 32%;
-    }
-
-    @media (min-width: 1024px) {
-      left: 55%;
-    }
-  }
-
-  @media (min-width: 768px) {
-    margin-top: 4rem;
   }
 }
 

@@ -96,7 +96,7 @@ img{
 }
 
 .link{
-    font-size: 1.0625rem;
+    font-size: 0.875rem;
     letter-spacing: 0.02em;
     display: flex;
     align-items: center;
@@ -108,7 +108,11 @@ img{
         display: block;
     }
 
+    @media(min-width: 768px){
+        font-size: 1rem;
+    }
+
     @media(min-width: 1024px){
-       font-size: 1.1875rem rem;
+       font-size: 1.1rem;
     }
 }
