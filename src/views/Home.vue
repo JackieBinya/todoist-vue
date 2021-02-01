@@ -12,7 +12,25 @@
 
         <community-section />
 
-        <div class="overlay" :class="[showOverlay ? 'show-overlay' : '']"></div>
+        <div :class="[showOverlay ? 'show' : 'hide', 'overlay']"></div>
+
+        <div
+          :class="[showOverlay ? 'show' : 'hide', 'hide-overlay']"
+          role="button"
+          @click="stopVideo"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.646 5.646a.5.5 0 01.708 0L12 11.293l5.646-5.647a.5.5 0 01.708.708L12.707 12l5.647 5.646a.5.5 0 01-.708.708L12 12.707l-5.646 5.647a.5.5 0 01-.708-.708L11.293 12 5.646 6.354a.5.5 0 010-.708z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </div>
 
         <section class="todoist-testimonials">
           <div
@@ -198,24 +216,17 @@ export default {
   data() {
     return {
       showDropdown: false,
-      showOverlay: false,
-      innerWidth: "",
       testimonials: testimonialsData.data
     };
   },
-  methods: {
-    playVideo() {
-      this.showOverlay = true;
-      /* 
-    const player = new YT.Player('player', {
-    height: '390',
-    width: '640',
-    videoId: 'M7lc1UVf-VE',
-    events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
+  computed: {
+    showOverlay() {
+      return this.$store.state.showOverlay;
     }
-  }); */
+  },
+  methods: {
+    stopVideo() {
+      this.$store.dispatch("toggleShowOverlay");
     },
     selectCard(id) {
       this.$refs[`${id}`][0].scrollIntoView({
@@ -247,6 +258,40 @@ export default {
 #home {
   // The rule below ensures that the overlay covers the whole view port
   position: relative;
+}
+
+// Overlay
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.8;
+  z-index: 98;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.hide-overlay {
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  top: 3.5rem;
+  right: 7%;
+  background: #fff;
+  z-index: 99;
+  padding: 0.03em;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 //Todoist Reviews Section

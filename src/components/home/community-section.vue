@@ -178,22 +178,6 @@ export default {
   }
 }
 
-.overlay {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0.8;
-  z-index: 98;
-  top: 0;
-  left: 0;
-  //   display: none;
-}
-
-.show-overlay {
-  display: block;
-}
-
 #player {
   position: absolute;
   top: 50%;

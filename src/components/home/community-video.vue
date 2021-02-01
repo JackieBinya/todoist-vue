@@ -7,7 +7,7 @@
         class="thumbnail-background"
       />
 
-      <div class="thumbnail" role="button">
+      <div class="thumbnail" role="button" @click="playVideo">
         <img src="@/assets/community-vid.webp" alt="" class="thumbnail" />
         <svg viewBox="0 0 60 61" class="_2o_bh">
           <g fill="none" fill-rule="evenodd" transform="translate(0 .2)">
@@ -41,6 +41,11 @@ export default {
   name: "CommunityVideo",
   components: {
     ArrowRightIcon
+  },
+  methods: {
+    playVideo() {
+      this.$store.dispatch("toggleShowOverlay");
+    }
   }
 };
 </script>

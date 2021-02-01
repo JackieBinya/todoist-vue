@@ -4,8 +4,18 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
+  state: {
+    showOverlay: false
+  },
+  mutations: {
+    toggleShowOverlay(state) {
+      state.showOverlay = !state.showOverlay;
+    }
+  },
+  actions: {
+    toggleShowOverlay(context) {
+      context.commit("toggleShowOverlay");
+    }
+  },
   modules: {}
 });
