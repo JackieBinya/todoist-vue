@@ -2,173 +2,175 @@
   <div>
     <Menu />
 
-    <main id="home">
-      <hero-section />
+    <div id="home">
+      <main>
+        <hero-section />
 
-      <demo-section />
+        <demo-section />
 
-      <reviews-section />
+        <reviews-section />
 
-      <community-section />
+        <community-section />
 
-      <div class="overlay" :class="[showOverlay ? 'show-overlay' : '']"></div>
+        <div class="overlay" :class="[showOverlay ? 'show-overlay' : '']"></div>
 
-      <div id="player"></div>
+        <section class="todoist-testimonials">
+          <div
+            class="todoist-testimonials-card"
+            v-for="t in testimonials"
+            :key="t.id"
+            :ref="t.id"
+          >
+            <div class="todoist-testimonials-text">
+              <div>“</div>
+              <div>{{ t.content }}</div>
+              <div>
+                <div>{{ t.name }}</div>
+                <div>{{ t.title }}</div>
+              </div>
+            </div>
 
-      <section class="todoist-testimonials">
-        <div
-          class="todoist-testimonials-card"
-          v-for="t in testimonials"
-          :key="t.id"
-          :ref="t.id"
-        >
-          <div class="todoist-testimonials-text">
-            <div>“</div>
-            <div>{{ t.content }}</div>
-            <div>
-              <div>{{ t.name }}</div>
-              <div>{{ t.title }}</div>
+            <div class="todoist-testimonials-images">
+              <img :src="require(`@/${t.url}`)" alt="" />
             </div>
           </div>
+        </section>
 
-          <div class="todoist-testimonials-images">
-            <img :src="require(`@/${t.url}`)" alt="" />
-          </div>
-        </div>
-      </section>
+        <ul class="todoist-testimonials-selectors">
+          <li
+            v-for="t in testimonials"
+            ref="list"
+            :key="t.id"
+            @click="selectCard(t.id)"
+          >
+            {{ t.subject }}
+          </li>
+        </ul>
 
-      <ul class="todoist-testimonials-selectors">
-        <li
-          v-for="t in testimonials"
-          ref="list"
-          :key="t.id"
-          @click="selectCard(t.id)"
-        >
-          {{ t.subject }}
-        </li>
-      </ul>
+        <section class="todoist-mission">
+          <div class="todoist-mission-text">
+            <h2>A task manager you can trust for life</h2>
+            <p class="p-content">
+              In the 13 years and 358 days that we’ve been building Todoist,
+              we’ve never considered selling out or becoming acquired.
+            </p>
 
-      <section class="todoist-mission">
-        <div class="todoist-mission-text">
-          <h2>A task manager you can trust for life</h2>
-          <p class="p-content">
-            In the 13 years and 358 days that we’ve been building Todoist, we’ve
-            never considered selling out or becoming acquired.
-          </p>
+            <p class="p-content">
+              Our team is committed to staying independent and earning your
+              trust for as long as you need our apps.
+            </p>
 
-          <p class="p-content">
-            Our team is committed to staying independent and earning your trust
-            for as long as you need our apps.
-          </p>
-
-          <router-link to="/" class="link">
-            <arrow-right-icon size="1.5x"></arrow-right-icon>
-            <span>Learn about our long term mission</span>
-          </router-link>
-        </div>
-
-        <div class="todoist-mission-image">
-          <img src="@/assets/mission.webp" alt="" />
-        </div>
-      </section>
-
-      <section class="todoist-secondary-call">
-        <div class="todoist-secondary-call-wrapper">
-          <div class="todoist-secondary-call-text">
-            <h2>Achieve piece of mind with Todoist</h2>
-
-            <CallToAction />
-          </div>
-
-          <img src="@/assets/secondary-call.webp" alt="" />
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <hr />
-
-      <div class="todoist-footer-content">
-        <router-link to="/">
-          <img src="@/assets/footer-logo.svg" alt="" />
-        </router-link>
-        <div class="todoist-footer-content-links">
-          <div class="todoist-footer-content-links-external">
-            <router-link to="/">
-              <img src="@/assets/footer-logo.svg" alt="" />
+            <router-link to="/" class="link">
+              <arrow-right-icon size="1.5x"></arrow-right-icon>
+              <span>Learn about our long term mission</span>
             </router-link>
-            <p>Join millions of people who organize their lives with Todoist</p>
-            <div>
-              <router-link to="/">
-                <img src="@/assets/footer/facebook.svg" alt="" />
-              </router-link>
-
-              <router-link to="/">
-                <img src="@/assets/footer/twitter.svg" alt="" />
-              </router-link>
-
-              <router-link to="/">
-                <img src="@/assets/footer/youtube.svg" alt="" />
-              </router-link>
-
-              <router-link to="/">
-                <img src="@/assets/footer/instagram.svg" alt="" />
-              </router-link>
-            </div>
           </div>
 
-          <div class="todoist-footer-content-links-internal">
-            <div>
-              <div class="todoist-footer-content-links-internal-heading">
-                Features
-              </div>
-              <router-link to="/">How it works </router-link>
+          <div class="todoist-mission-image">
+            <img src="@/assets/mission.webp" alt="" />
+          </div>
+        </section>
 
-              <router-link to="/">Premium </router-link>
+        <section class="todoist-secondary-call">
+          <div class="todoist-secondary-call-wrapper">
+            <div class="todoist-secondary-call-text">
+              <h2>Achieve piece of mind with Todoist</h2>
 
-              <router-link to="/">For Teams </router-link>
-
-              <router-link to="/">Pricing</router-link>
-
-              <router-link to="/">Templates</router-link>
+              <CallToAction />
             </div>
 
-            <div>
-              <div class="todoist-footer-content-links-internal-heading">
-                Resources
+            <img src="@/assets/secondary-call.webp" alt="" />
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <hr />
+
+        <div class="todoist-footer-content">
+          <router-link to="/">
+            <img src="@/assets/footer-logo.svg" alt="" />
+          </router-link>
+          <div class="todoist-footer-content-links">
+            <div class="todoist-footer-content-links-external">
+              <router-link to="/">
+                <img src="@/assets/footer-logo.svg" alt="" />
+              </router-link>
+              <p>
+                Join millions of people who organize their lives with Todoist
+              </p>
+              <div>
+                <router-link to="/">
+                  <img src="@/assets/footer/facebook.svg" alt="" />
+                </router-link>
+
+                <router-link to="/">
+                  <img src="@/assets/footer/twitter.svg" alt="" />
+                </router-link>
+
+                <router-link to="/">
+                  <img src="@/assets/footer/youtube.svg" alt="" />
+                </router-link>
+
+                <router-link to="/">
+                  <img src="@/assets/footer/instagram.svg" alt="" />
+                </router-link>
               </div>
-              <router-link to="/">Download Apps</router-link>
-
-              <router-link to="/"> Help Center</router-link>
-
-              <router-link to="/"> Productivity Methods</router-link>
-
-              <router-link to="/"> Refer a friend</router-link>
-
-              <router-link to="/"> Integrations</router-link>
-              <router-link to="/"> Channel Partners</router-link>
-
-              <router-link to="/">Developer API </router-link>
             </div>
 
-            <div>
-              <div class="todoist-footer-content-links-internal-heading">
-                Company
+            <div class="todoist-footer-content-links-internal">
+              <div>
+                <div class="todoist-footer-content-links-internal-heading">
+                  Features
+                </div>
+                <router-link to="/">How it works </router-link>
+
+                <router-link to="/">Premium </router-link>
+
+                <router-link to="/">For Teams </router-link>
+
+                <router-link to="/">Pricing</router-link>
+
+                <router-link to="/">Templates</router-link>
               </div>
-              <router-link to="/"> About Us</router-link>
 
-              <router-link to="/"> We are hiring!</router-link>
+              <div>
+                <div class="todoist-footer-content-links-internal-heading">
+                  Resources
+                </div>
+                <router-link to="/">Download Apps</router-link>
 
-              <router-link to="/">Blog </router-link>
+                <router-link to="/"> Help Center</router-link>
 
-              <router-link to="/">Press </router-link>
+                <router-link to="/"> Productivity Methods</router-link>
 
-              <router-link to="/">Twist </router-link>
+                <router-link to="/"> Refer a friend</router-link>
+
+                <router-link to="/"> Integrations</router-link>
+                <router-link to="/"> Channel Partners</router-link>
+
+                <router-link to="/">Developer API </router-link>
+              </div>
+
+              <div>
+                <div class="todoist-footer-content-links-internal-heading">
+                  Company
+                </div>
+                <router-link to="/"> About Us</router-link>
+
+                <router-link to="/"> We are hiring!</router-link>
+
+                <router-link to="/">Blog </router-link>
+
+                <router-link to="/">Press </router-link>
+
+                <router-link to="/">Twist </router-link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   </div>
 </template>
 
@@ -580,6 +582,7 @@ footer {
   background: #fff9f3;
   color: rgb(31, 31, 31);
   padding: 4rem 1rem 3rem;
+  position: relative;
 
   hr {
     color: rgba(0, 0, 0, 0.14);

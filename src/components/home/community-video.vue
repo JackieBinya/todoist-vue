@@ -17,6 +17,7 @@
         </svg>
       </div>
     </div>
+
     <router-link to="/" class="link">
       <arrow-right-icon size="1.5x"></arrow-right-icon>
       <span>Learn more about the Todoist Community</span>
