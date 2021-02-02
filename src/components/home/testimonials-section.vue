@@ -14,9 +14,9 @@
             <div>{{ t.name }}</div>
             <div>{{ t.title }}</div>
           </div>
-          <div class="todoist-testimonials-images">
-            <img :src="require(`@/${t.url}`)" alt="" />
-          </div>
+        </div>
+        <div class="todoist-testimonials-images">
+          <img :src="require(`@/${t.url}`)" alt="" />
         </div>
       </div>
     </section>
