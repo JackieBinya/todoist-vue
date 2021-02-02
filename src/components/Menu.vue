@@ -207,7 +207,7 @@ header {
   width: 100vw;
   padding: 0 16px;
   background-color: #fff;
-  z-index: 100;
+  z-index: 101;
 }
 
 nav {

@@ -1,56 +1,107 @@
 <template>
-  <div class="todoist-community-video">
-    <div class="todoist-community-video-images">
-      <img
-        src="@/assets/community-video-background.webp"
-        alt=""
-        class="thumbnail-background"
-      />
+  <div>
+    <div class="todoist-community-video">
+      <div class="todoist-community-video-images">
+        <img
+          src="@/assets/community-video-background.webp"
+          alt=""
+          class="thumbnail-background"
+        />
 
-      <div class="thumbnail" role="button" @click="playVideo">
-        <img src="@/assets/community-vid.webp" alt="" class="thumbnail" />
-        <svg viewBox="0 0 60 61" class="_2o_bh">
-          <g fill="none" fill-rule="evenodd" transform="translate(0 .2)">
-            <circle cx="30" cy="30" fill="#000" r="30"></circle>
-            <path d="M45 30.5L22 42V19z" fill="#fff"></path>
-          </g>
-        </svg>
+        <div class="thumbnail" role="button" @click="playVideo">
+          <img src="@/assets/community-vid.webp" alt="" class="thumbnail" />
+          <svg viewBox="0 0 60 61" class="_2o_bh">
+            <g fill="none" fill-rule="evenodd" transform="translate(0 .2)">
+              <circle cx="30" cy="30" fill="#000" r="30"></circle>
+              <path d="M45 30.5L22 42V19z" fill="#fff"></path>
+            </g>
+          </svg>
+        </div>
       </div>
+
+      <router-link to="/" class="link">
+        <arrow-right-icon size="1.5x"></arrow-right-icon>
+        <span>Learn more about the Todoist Community</span>
+      </router-link>
     </div>
-
-    <router-link to="/" class="link">
-      <arrow-right-icon size="1.5x"></arrow-right-icon>
-      <span>Learn more about the Todoist Community</span>
-    </router-link>
-
-    <!--  <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/IL8jpc8Lik4"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe> -->
+    <div
+      :class="[showOverlay ? 'show' : 'hide', 'hide-overlay']"
+      role="button"
+      @click="stopVideo"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.646 5.646a.5.5 0 01.708 0L12 11.293l5.646-5.647a.5.5 0 01.708.708L12.707 12l5.647 5.646a.5.5 0 01-.708.708L12 12.707l-5.646 5.647a.5.5 0 01-.708-.708L11.293 12 5.646 6.354a.5.5 0 010-.708z"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+    </div>
+    <youtube-video ref="video"></youtube-video>
   </div>
 </template>
 
 <script>
 import { ArrowRightIcon } from "vue-feather-icons";
+import YoutubeVideo from "./youtube-video.vue";
 
 export default {
   name: "CommunityVideo",
   components: {
-    ArrowRightIcon
+    ArrowRightIcon,
+    YoutubeVideo
   },
   methods: {
+    stopVideo() {
+      this.$store.dispatch("toggleShowOverlay");
+      document.body.style.overflow = "auto";
+      this.player.stopVideo();
+    },
     playVideo() {
       this.$store.dispatch("toggleShowOverlay");
+      document.body.style.overflow = "hidden";
+      this.player.playVideo();
+    }
+  },
+  computed: {
+    player() {
+      return this.$refs.video.$refs.youtube.player;
+    },
+    showOverlay() {
+      return this.$store.state.showOverlay;
     }
   }
 };
 </script>
 
 <style lang="scss">
+//Overlay Styles
+.hide-overlay {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 47.5%;
+  right: 7%;
+  background: #fff;
+  z-index: 100;
+  padding: 0.03em;
+  border-radius: 50%;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    top: 57.5%;
+  }
+
+  @media (min-width: 1024px) {
+    top: 43.1%;
+  }
+}
+
+//Community Video Styles
 .todoist-community-video {
   width: 100%;
   position: relative;
