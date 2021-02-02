@@ -12,8 +12,6 @@
 
         <community-section />
 
-        <div :class="[showOverlay ? 'show' : 'hide', 'overlay']"></div>
-
         <section class="todoist-testimonials">
           <div
             class="todoist-testimonials-card"
@@ -201,11 +199,6 @@ export default {
       testimonials: testimonialsData.data
     };
   },
-  computed: {
-    showOverlay() {
-      return this.$store.state.showOverlay;
-    }
-  },
   methods: {
     selectCard(id) {
       this.$refs[`${id}`][0].scrollIntoView({
@@ -237,22 +230,7 @@ export default {
 #home {
   // The rule below ensures that the overlay covers the whole view port
   position: relative;
-
   width: 100%;
-}
-
-// Overlay
-.overlay {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0.8;
-  z-index: 98;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  display: none;
 }
 
 //Todoist Reviews Section

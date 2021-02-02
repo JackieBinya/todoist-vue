@@ -24,6 +24,8 @@
         <span>Learn more about the Todoist Community</span>
       </router-link>
     </div>
+    <div :class="[showOverlay ? 'show' : 'hide', 'overlay']"></div>
+
     <div
       :class="[showOverlay ? 'show' : 'hide', 'hide-overlay']"
       role="button"
@@ -80,6 +82,19 @@ export default {
 
 <style lang="scss">
 //Overlay Styles
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.8;
+  z-index: 98;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: none;
+}
+
 .hide-overlay {
   position: absolute;
   width: 48px;
