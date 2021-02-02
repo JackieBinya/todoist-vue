@@ -167,10 +167,7 @@ export default {
     return {
       showDropdown: false
     };
-  },
-  methods: {},
-
-  mounted: function() {}
+  }
 };
 </script>
 
