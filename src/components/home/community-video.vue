@@ -84,7 +84,7 @@ export default {
   position: absolute;
   width: 48px;
   height: 48px;
-  top: 47.5%;
+  top: 47.8%;
   right: 7%;
   background: #fff;
   z-index: 100;
@@ -93,11 +93,11 @@ export default {
   cursor: pointer;
 
   @media (min-width: 768px) {
-    top: 57.5%;
+    top: 46.1%;
   }
 
   @media (min-width: 1024px) {
-    top: 43.1%;
+    top: 43.3%;
   }
 }
 
