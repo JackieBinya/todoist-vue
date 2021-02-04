@@ -89,6 +89,7 @@ export default {
 
   &-images {
     position: relative;
+    margin-bottom: 2rem;
 
     img {
       width: 100%;
@@ -122,7 +123,7 @@ export default {
 
 .todoist-interface {
   position: relative;
-  margin: -11% 0 0;
+  margin: -20% 0 0;
 
   @media (min-width: 1024px) {
     margin: -6rem 0 -17.5rem;
