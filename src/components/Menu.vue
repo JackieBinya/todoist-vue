@@ -2,8 +2,20 @@
   <header>
     <nav>
       <router-link to="/">
-        <img src="../assets/mobile-logo.svg" alt="logo" class="logo-sm logo" />
-        <img src="../assets/desktop-logo.svg" alt="logo" class="logo-bg" />
+        <img
+          src="../assets/mobile-logo.svg"
+          height="32"
+          width="33"
+          alt="logo"
+          class="logo-sm logo"
+        />
+        <img
+          src="../assets/desktop-logo.svg"
+          height="32"
+          width="127"
+          alt="logo"
+          class="logo-bg"
+        />
       </router-link>
 
       <div

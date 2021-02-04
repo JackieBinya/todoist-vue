@@ -90,8 +90,12 @@ export default {
   &-images {
     position: relative;
 
-    img:first-child {
+    img {
       width: 100%;
+      height: auto;
+    }
+
+    img:first-child {
       max-width: 1034px;
       margin: 0 auto;
     }
@@ -100,7 +104,6 @@ export default {
 
     img:nth-child(2) {
       display: none;
-      width: 100%;
       transform: translate(-50%);
       position: absolute;
       left: 50%;
@@ -128,6 +131,7 @@ export default {
 
 .desktop-interface {
   width: 100%;
+  height: auto;
   max-width: 1398px;
 }
 
@@ -137,6 +141,7 @@ export default {
   right: 14%;
   width: 42%;
   max-width: 581px;
+  height: auto;
 
   @media (min-width: 768px) {
     top: 13%;

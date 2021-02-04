@@ -4,12 +4,12 @@
 
     <div class="todoist-footer-content">
       <router-link to="/">
-        <img src="@/assets/footer-logo.svg" alt="" />
+        <img src="@/assets/footer-logo.svg" width="32" height="32" alt="" />
       </router-link>
       <div class="todoist-footer-content-links">
         <div class="todoist-footer-content-links-external">
           <router-link to="/">
-            <img src="@/assets/footer-logo.svg" alt="" />
+            <img src="@/assets/footer-logo.svg" width="32" height="32" alt="" />
           </router-link>
           <p>
             Join millions of people who organize their lives with Todoist

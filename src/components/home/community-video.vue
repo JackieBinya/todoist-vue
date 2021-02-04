@@ -9,7 +9,7 @@
         />
 
         <div class="thumbnail" role="button" @click="playVideo">
-          <img src="@/assets/community-vid.webp" alt="" class="thumbnail" />
+          <img src="@/assets/community-vid.webp" alt="" />
           <svg viewBox="0 0 60 61" class="_2o_bh">
             <g fill="none" fill-rule="evenodd" transform="translate(0 .2)">
               <circle cx="30" cy="30" fill="#000" r="30"></circle>
@@ -141,12 +141,13 @@ export default {
 
   .thumbnail {
     width: 100%;
-
     position: relative;
     cursor: pointer;
 
     img {
+      width: 100%;
       max-width: 478px;
+      height: auto;
       border-radius: 8px;
       box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.24);
     }

@@ -97,6 +97,8 @@ export default {
   }
 
   img {
+    width: 100%;
+    height: auto;
     max-width: 404px;
     max-height: 468px;
     display: none;
