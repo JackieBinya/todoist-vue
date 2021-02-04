@@ -44,7 +44,7 @@ export default {
 .todoist-demo {
   position: relative;
   text-align: left;
-  padding: 0 1rem 8vw;
+  padding: 0.5rem 1rem 8vw;
 
   @media (min-width: 481px) {
     padding: 4rem 1rem 8vw;
