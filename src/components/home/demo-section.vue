@@ -45,6 +45,7 @@ export default {
   position: relative;
   text-align: left;
   padding: 0rem 1rem 8vw;
+  background: #fff;
 
   @media (min-width: 481px) {
     padding: 4rem 1rem 8vw;
