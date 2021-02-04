@@ -42,6 +42,7 @@ export default {
 <style lang="scss">
 // Todoist Demo Section
 .todoist-demo {
+  position: relative;
   text-align: left;
   padding: 0 1rem 8vw;
 
