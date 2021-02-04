@@ -57,11 +57,6 @@ export default {
     TestimonialsSection,
     MissionSection,
     FooterSection
-  },
-  data() {
-    return {
-      showDropdown: false
-    };
   }
 };
 </script>
